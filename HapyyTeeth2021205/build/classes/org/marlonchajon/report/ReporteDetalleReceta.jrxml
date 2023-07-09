@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteDetalleReceta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="53fb9761-006c-4e7e-ad25-700df3690a40">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select * from DetalleReceta DR Inner Join Medicamentos M on DR.codigoMedicamento = M.codigoMedicamento
+where DR.codigoReceta = $P{codReceta}]]>
+	</queryString>
+	<field name="codigoDetalleReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoMedicamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreMedicamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="190" height="20" uuid="7b9488e3-bb3d-4852-997f-d42638e58e77"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="2" width="181" height="20" uuid="8bb9aef1-8fad-417d-a708-dda6f0fb7fce"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre del Medicamento]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="572" height="1" uuid="5a759ec3-2df3-471c-b5a6-44bb39f8414a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#2C3E50"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="190" height="20" uuid="698e827d-cabb-4423-8c89-b112f6e1d33a"/>
+				<textFieldExpression><![CDATA[$F{dosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="5" width="181" height="20" uuid="750c6be7-d0f3-4f6c-a1d7-7fbf5d5e5165"/>
+				<textFieldExpression><![CDATA[$F{nombreMedicamento}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="25" width="572" height="1" uuid="63654ed5-1706-4a63-8a9f-28b90afd002a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#2C3E50"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

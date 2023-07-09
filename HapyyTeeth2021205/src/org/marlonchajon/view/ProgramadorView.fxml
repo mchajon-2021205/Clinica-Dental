@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.marlonchajon.controller.ProgramadorController">
+   <children>
+      <Pane prefHeight="406.0" prefWidth="530.0" style="-fx-background-color: White;">
+         <children>
+            <ImageView fitHeight="567.0" fitWidth="903.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.50;">
+               <image>
+                  <Image url="@../image/VsitaProgramador1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="59.0" layoutY="254.0" text="Programador" />
+            <Label layoutX="17.0" layoutY="280.0" text="Marlon David Chajon Suchite" />
+            <Label layoutX="52.0" layoutY="306.0" text="Codigo Tecnico" />
+            <Label layoutX="79.0" layoutY="334.0" text="IN5AV" />
+            <Pane layoutX="149.0" layoutY="14.0" prefHeight="119.0" prefWidth="299.0" style="-fx-background-color: #faab04; -fx-opacity: 0.7;" />
+            <ImageView fitHeight="52.0" fitWidth="58.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Inicio.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="-115.0" layoutY="242.0" prefHeight="128.0" prefWidth="299.0" style="-fx-background-color: #21618C; -fx-opacity: 0.7;" />
+            <ImageView fitHeight="186.0" fitWidth="99.0" layoutX="85.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/fotoP.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

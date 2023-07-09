@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteDoctores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f61a3c7-7f59-484f-b76a-765c05902352">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="rutaFondo" class="java.lang.String"/>
+	<parameter name="rutaLogo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Call sp_ListarDoctores]]>
+	</queryString>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="133" y="2" width="100" height="20" uuid="e8143c76-05eb-433d-849a-1a9c04f101dd"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombres Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="2" width="100" height="20" uuid="81f4921f-a945-48b2-81a4-b5c37c7a56f2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="2" width="121" height="20" uuid="425ea94b-535b-4ad5-a9e7-f6a9672c590c"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número Colegiado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="2" width="104" height="20" uuid="d8301185-9731-4e6e-81ef-68c8a3d4197f"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Especialidad]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="21" width="555" height="1" uuid="0d5c27c7-3f06-4256-a273-b833d840b0d8"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#2C3E50"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement x="133" y="0" width="100" height="20" uuid="e21cb852-5be4-4dd9-8afd-a29af3d78e2b"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="100" height="20" uuid="e3e45a22-ecea-459f-b9a1-6266b722475a"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{apellidosDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="119" height="20" uuid="d60892de-e114-4987-8fde-1d9156fef826"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{numeroColegiado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="0" width="126" height="20" uuid="9d5e6574-fe40-4f44-a6bf-b18af600f752"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{codigoEspecialidad}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="2d06d8ed-3661-4cae-ad2d-e87ca89f3aa7"/>
+				<graphicElement>
+					<pen lineStyle="Dashed" lineColor="#2C3E50"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

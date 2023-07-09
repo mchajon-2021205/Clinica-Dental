@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteRecetas" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="093ab2d6-ac46-468b-b093-b0f69b18370c">
+	<property name="ireport.zoom" value="0.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codReceta" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\COMPAQ1\\Documents\\NetBeansProjects\\HapyyTeeth2021205\\src\\org\\marlonchajon\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="rutaFondo" class="java.lang.String"/>
+	<parameter name="rutaLogo" class="java.lang.String"/>
+	<parameter name="rutaFirma" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from Recetas where codigoReceta = $P{codReceta}]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="572" height="752" uuid="fb4dd0cb-97f2-4668-976f-cbb77a792b7c"/>
+				<imageExpression><![CDATA[$P{rutaFondo}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="135" height="119" uuid="0abc2fad-7acc-4d58-9d00-c8a3af271477"/>
+				<imageExpression><![CDATA[$P{rutaLogo}]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="370" y="598" width="100" height="50" uuid="866a62f1-2acd-42dd-901a-e820fefe5ebb"/>
+				<imageExpression><![CDATA[$P{rutaFirma}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="58" splitType="Stretch">
+			<textField>
+				<reportElement x="165" y="24" width="100" height="20" uuid="09e19f3d-0070-4e35-8248-65ac1f6aaf0d"/>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="24" width="126" height="20" uuid="5efcd679-69ba-4208-b1de-ddd74faef225"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Numero Receta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="24" width="99" height="20" uuid="11ea4998-d10f-4d17-9080-48a588c80dee"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de Emisión]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="417" y="24" width="100" height="20" uuid="30876a56-56b3-4bbc-a1d1-ffc0e92aac4d"/>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="572" height="125" uuid="0f9479f6-27d1-48f0-9e80-6cd0b0678650"/>
+				<subreportParameter name="codReceta">
+					<subreportParameterExpression><![CDATA[$P{codReceta}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "ReporteDetalleReceta.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="110" splitType="Stretch">
+			<line>
+				<reportElement x="325" y="75" width="185" height="1" uuid="533077d2-ee75-454f-a75e-9c7bf7ebb174"/>
+			</line>
+			<staticText>
+				<reportElement x="383" y="76" width="100" height="20" uuid="8ed6defe-b4f6-4ab1-aa5f-9c25acca831a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma Doctor]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
